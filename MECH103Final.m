@@ -23,11 +23,33 @@
 
 
 
+
 %% Code to name ports, sensors etc
 
 
 %% A While Loop here to constantly read data from the sensors
 
+% algorithm to calculate vertical speed
+%     store altitude information for x seconds, compare to current altitude and divide by x
+
+% put code to record date here as well
+
+    
+    
+
 
 %% Logic will be placed here that set off alarms when certain peramiters are hit
 % Example: If pitch is too high and speed is too low, set off alarm
+
+% while true
+%     if pitch out of limits
+%         run pitch alert function
+%     end
+%     
+%     if bank angle out of limits
+%         run bank angle alert function
+%     end
+%     
+%     if vertical speed excessive
+%         run vertical speed function
+%     end
