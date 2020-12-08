@@ -105,19 +105,28 @@ void loop() {
   Serial.print(", Z: ");
   */
 
-  //Acceleration Vector Through the Board
+  //ACCELERATION Vector Through the Board
   Serial.print(a.acceleration.z);
   Serial.println(" m/s^2");
 
-  Serial.print(" Roll Rate: ");
+  //ROLL RATES
+  //Serial.print("Roll Rate: ");
   Serial.print(g.gyro.x);
-  Serial.print(", Pitch Rate: ");
+  Serial.print(",");
+  //Serial.print(", Pitch Rate: ");
   Serial.print(g.gyro.y);
-  Serial.print(", Yaw Rate: ");
+  //Serial.print(", Yaw Rate: ");
+  Serial.print(",");
   Serial.print(g.gyro.z);
-  Serial.println(" rad/s");
-
+  //Serial.println(" rad/s");
     Serial.println("");
+
+    myFile.print(g.gyro.x);
+    myFile.print(",");
+    myFile.print(g.gyro.y);
+    myFile.print(",");
+    myFile.print(g.gyro.z);
+    myFile.print(" "); //SPACE
 
     delay(500);
 
