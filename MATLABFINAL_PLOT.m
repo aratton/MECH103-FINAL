@@ -11,9 +11,14 @@
 %Tinmstamp array that counts in halfseconds since start until the total
 %number of seconds run
 
-length = 19.5;
 
-timestamp = [0:0.5:length];
+%CHECK THESE VARIABLES!
+length_csv = 290;
+sample_rate = 0.5;
+
+
+length_arr = (length_csv*sample_rate)-sample_rate;
+timestamp = [0:sample_rate:length_arr];
 
 
 %Create Array from the csv file
