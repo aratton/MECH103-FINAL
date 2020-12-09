@@ -10,7 +10,10 @@
 
 %Tinmstamp array that counts in halfseconds since start until the total
 %number of seconds run
-timestamp = [0:0.5:24];
+
+length = 19.5;
+
+timestamp = [0:0.5:length];
 
 
 %Create Array from the csv file
@@ -55,11 +58,11 @@ grid ON
 
 %Yaw Graph x and y axis (x axis is time)
 
-yaw = Array(:,4);
-nexttile
-plot(timestamp, yaw);
+%yaw = Array(:,4);
+%nexttile
+%plot(timestamp, yaw);
 
-title('Yaw vs Time');
-xlabel('Time in Seconds Since Takeoff');
-ylabel('Yaw');
+%title('Yaw vs Time');
+%xlabel('Time in Seconds Since Takeoff');
+%ylabel('Yaw');
 grid ON
