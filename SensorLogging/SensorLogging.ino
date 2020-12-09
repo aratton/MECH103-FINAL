@@ -264,7 +264,7 @@ void loop() {
     myFile.print(",");
     myFile.println(ypr[2] * 180/M_PI);
     
-    delay(500);
+    delay(100);
   }
   myFile.close();
 }
