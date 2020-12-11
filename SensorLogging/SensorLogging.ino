@@ -5,11 +5,6 @@
 #include <SFE_BMP180.h>
 #include <Adafruit_BMP280.h>
 
-//ORIENTATION/////////////
-/*#include <Adafruit_MPU6050.h>
-#include <Adafruit_Sensor.h>
-#include <Wire.h>
-*/
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
@@ -65,22 +60,6 @@ void setup() {
                   Adafruit_BMP280::SAMPLING_X16,    /* Pressure oversampling */
                   Adafruit_BMP280::FILTER_X16,      /* Filtering. */
                   Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
-
-/*
-//MPU
- Serial.println("Adafruit MPU6050 test");
-  if (!mpu.begin()) {
-    Serial.println("Failed to find MPU6050 chip");
-    while (1) {
-      delay(10);
-    }
-  }
-  Serial.println("MPU6050 Found!");
-  mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
-  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
-  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
-  delay(100);
-*/
 
 
 //MPU/////////////////////
@@ -155,58 +134,6 @@ Serial.println(" inHg");
 void loop() {
 
     myFile = SD.open("test.csv", FILE_WRITE);
-
-//BMP
-  /*
-    Serial.print(F("Temperature = "));
-    Serial.print(bmp.readTemperature());
-    Serial.println(" *C");
-
-    Serial.print(F("Pressure = "));
-    Serial.print(bmp.readPressure()/100); //displaying the Pressure in hPa, you can change the unit
-    Serial.println(" hPa");
-*/
-    //Serial.println(F("Approx altitude"));
-
-
-//MPU
-
-  //sensors_event_t a, g, temp;
-  //mpu.getEvent(&a, &g, &temp);
-  /*
-  Serial.print("Acceleration X: ");
-  Serial.print(a.acceleration.x);
-  Serial.print(", Y: ");
-  Serial.print(a.acceleration.y);
-  Serial.print(", Z: ");
-  */
-
-  //ACCELERATION Vector Through the Board
-  /*
-  Serial.print(a.acceleration.z);
-  Serial.println(" m/s^2");
-  */
-
-/*
-  //ROLL RATES
-  //Serial.print("Roll Rate: ");
-  Serial.print(g.gyro.x);
-  Serial.print(",");
-  //Serial.print(", Pitch Rate: ");
-  Serial.print(g.gyro.y);
-  //Serial.print(", Yaw Rate: ");
-  Serial.print(",");
-  Serial.print(g.gyro.z);
-  //Serial.println(" rad/s");
-    Serial.println("");
-
-    myFile.print(g.gyro.x);
-    myFile.print(",");
-    myFile.print(g.gyro.y);
-    myFile.print(",");
-    myFile.println(g.gyro.z);
-    //myFile.print(" "); //SHOULD RETURN A NEW ROW
-*/
 
 //NEW GYRO CODE////////////
   // if programming failed, don't try to do anything
